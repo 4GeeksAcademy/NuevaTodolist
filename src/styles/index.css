@@ -1,12 +1,49 @@
+body{
+    background-image:url("data:image/jpeg;base64,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");
+    background-size: cover;
+}
 
-/* 
+li{
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.6cm;
+}
 
-    You can write your own styles here...
+.header_titulo{
+    display:flex;
+    justify-content: center;
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3cm;
+    margin-top: 1cm;
+    color: rgb(29, 31, 30);
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
+.formulario-tareas{
+    display: flex;
+    justify-content: center;
+    padding: 0.3cm;
+}
+.formulario-tareas_input{
+    padding: 0.5cm;
+    font-family: "Grey Qo", cursive;
+    font-weight: 400;
+    font-style: normal;
 
-*/
+}
+.lista-tareas_tareas{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 1cm;
+    margin-right: 8cm;
+    margin-left: 5cm;
+}
+
+.lista-tareas_contenedor-botones{
+    display: flex;
+    gap: 0.5cm;
+}
+
+

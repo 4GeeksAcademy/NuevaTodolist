@@ -14,6 +14,8 @@ const ListadeTareas = ({ listaTareas, setListaTareas }) => {
         }))
     }
 
+    
+
     return (
         <ul className="lista-tareas">
             {
@@ -21,11 +23,11 @@ const ListadeTareas = ({ listaTareas, setListaTareas }) => {
                     ?
                     listaTareas.map((tarea) => {
                         return (
-                            <Tarea key={tarea.id} tarea={tarea} editarTarea={editarTarea}/>
+                            <Tarea key={tarea.id} tarea={tarea} editarTarea={editarTarea} />
                         )
                     })
                     :
-                    <div className="lista-tareas__mensaje">- no hay tareas agregadas- </div>
+                    <div className="lista-tareas__mensaje">- No hay tareas - </div>
             }
         </ul>
     )

@@ -4,27 +4,9 @@ import React, { useState } from "react";
 const Tarea = ({ tarea, editarTarea }) => {
     const [editandoTarea, setEditandoTarea] = useState(false);
     const [nuevaTarea, setNuevaTarea] = useState(tarea.label);
-    const [eliminarTarea, setEliminarTareas] = useState(false)
 
     
-    const enviarAlCesto = async (id) =>{
-    try {
-        const response = await fetch (`https://playground.4geeks.com/todo/todos/${tarea.id}`,{
-            method: "DELETE",
-         })
-         if (response.ok) {
-            const data = await response.json();
-            return data;
-        }
-    } catch (error) {
-        console.error("Error al eliminar");
-
-    }
-    setEliminarTareas([]);
-    }
-    
-      
-    const enviarFormulario = async (e) => {
+        const enviarFormulario = async (e) => {
         e.preventDefault()
 
         try {
@@ -68,7 +50,7 @@ return (
 
         }
         <div className="lista-tareas_contenedor-botones">
-            <button onClick={() => (enviarAlCesto(!eliminarTarea))}>
+            <button onClick={() => {}}>
                 <i className="fas fa-trash"></i>
             </button>
             <button onClick={() => (setEditandoTarea(!editandoTarea))}>
