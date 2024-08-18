@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import ListadeTareas from "./ListadeTareas";
 
 
-const Tarea = ({ tarea, editarTarea }) => {
+const Tarea = ({ tarea, editarTarea, listaTareas, setListaTareas}) => {
     const [editandoTarea, setEditandoTarea] = useState(false);
     const [nuevaTarea, setNuevaTarea] = useState(tarea.label);
 
@@ -32,6 +33,27 @@ const Tarea = ({ tarea, editarTarea }) => {
  }
 setEditandoTarea(false);
 }
+
+
+//aca deberia ir al borrar tarea//
+const eliminarTarea = async (id) => {
+    try {
+        const response = await fetch(`https://playground.4geeks.com/todo/todos/${id}`, {
+            method: "DELETE" ,
+        });
+        console.log(id);
+        await response.text();
+        const nuevaListaDeTareas = listaTareas.filter((tarea) => {
+            return tarea.id != id;
+        });
+        setListaTareas(nuevaListaDeTareas);
+
+    } catch (error) {
+        console.error("Error al borrar, error");
+        
+    }
+}
+// hasta aca el borrar//
 return (
     <li className="lista-tareas_tareas">
         {editandoTarea === true ?
@@ -50,7 +72,7 @@ return (
 
         }
         <div className="lista-tareas_contenedor-botones">
-            <button onClick={() => {}}>
+            <button onClick={() => {eliminarTarea(tarea.id)}}>
                 <i className="fas fa-trash"></i>
             </button>
             <button onClick={() => (setEditandoTarea(!editandoTarea))}>

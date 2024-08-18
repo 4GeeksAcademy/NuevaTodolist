@@ -23,7 +23,7 @@ const ListadeTareas = ({ listaTareas, setListaTareas }) => {
                     ?
                     listaTareas.map((tarea) => {
                         return (
-                            <Tarea key={tarea.id} tarea={tarea} editarTarea={editarTarea} />
+                            <Tarea key={tarea.id} tarea={tarea} editarTarea={editarTarea} listaTareas={listaTareas} setListaTareas={setListaTareas}/>
                         )
                     })
                     :
