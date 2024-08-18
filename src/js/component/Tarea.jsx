@@ -7,7 +7,7 @@ const Tarea = ({ tarea, editarTarea, listaTareas, setListaTareas}) => {
     const [nuevaTarea, setNuevaTarea] = useState(tarea.label);
 
     
-        const enviarFormulario = async (e) => {
+const enviarFormulario = async (e) => {
         e.preventDefault()
 
         try {
@@ -35,7 +35,6 @@ setEditandoTarea(false);
 }
 
 
-//aca deberia ir al borrar tarea//
 const eliminarTarea = async (id) => {
     try {
         const response = await fetch(`https://playground.4geeks.com/todo/todos/${id}`, {
@@ -53,7 +52,6 @@ const eliminarTarea = async (id) => {
         
     }
 }
-// hasta aca el borrar//
 return (
     <li className="lista-tareas_tareas">
         {editandoTarea === true ?
